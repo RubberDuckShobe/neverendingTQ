@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+//Shoutout to https://github.com/samnyan/DMTQ-Localserver/blob/master/dmtq-java-server/src/main/java/moe/msm/dmtqjavaserver/model/PlayData.java
+model Member {
+  id        Int        @id @default(autoincrement())
+  nickname  String
+  guid      String
+  puid      String
+  udid      String
+  code      String
+  slotItem1 Int
+  slotItem2 Int
+  slotItem3 Int
+  slotItem4 Int
+  playdata  PlayData[]
+}
+
+model PlayData {
+  id            Int    @id @default(autoincrement())
+  pattern_id    Int
+  user_id       Int
+  player        Member @relation(fields: [user_id], references: [id])
+  score         Int    @default(0)
+  grade         String @default("F")
+  isAllCombo    String @default("N")
+  isPerfectPlay String @default("N")
+  judgement     Int    @default(0)
+}

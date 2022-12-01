@@ -1,0 +1,22 @@
+{
+  "name": "neverendingtq",
+  "version": "1.0.0",
+  "description": "Custom server for a certain dead circle tapping game.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPLv3",
+  "dependencies": {
+    "@prisma/client": "^4.7.0",
+    "fastify": "^4.10.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "prisma": "^4.7.0",
+    "typescript": "^4.9.3"
+  }
+}
