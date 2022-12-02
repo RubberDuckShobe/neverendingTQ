@@ -6,3 +6,8 @@ cert/*
 dist
 *.db
 *.db-journal
+# Game files
+*.lz4
+charts/*
+songs/*
+patch/*
